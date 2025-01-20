@@ -1,4 +1,11 @@
-mujoco
-dm-control
-numpy
+cvxopt
+dm_control
 gymnasium
+mujoco
+numpy
+pytest
+roboticstoolbox_python
+scipy
+setuptools
+spatialmath_python
+xacro
