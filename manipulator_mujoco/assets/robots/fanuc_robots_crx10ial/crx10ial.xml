@@ -1,0 +1,114 @@
+<mujoco model="crx-10ial">
+  <compiler angle="radian" meshdir="meshes" autolimits="true"/>
+
+  <option integrator="implicitfast"/>
+
+  <default>
+    <default class="crx-10ial">
+      <material specular="0.5" shininess="0.25"/>
+      <joint pos="0 0 0" axis="1 0 0" range="-3.1415 3.1415" armature="0.1"/>
+      <general gaintype="fixed" biastype="affine" ctrlrange="-3.1415 3.1415" gainprm="2000" biasprm="0 -2000 -400" forcerange="-150 150"/> 
+      
+     <default class="size4">
+        <joint range="-3.1415 3.1415"/>
+        <general ctrlrange="-3.1415 3.1415"/>
+      </default>
+
+      <default class="size3">
+        <joint range="-9.42478 9.42478"/>
+        <general gainprm="500" biasprm="0 -500 -100" forcerange="-28 28"/>
+      </default>
+
+      <default class="size2">
+        <joint range="-6.63225 6.63225"/>
+        <general gainprm="500" biasprm="0 -500 -100" forcerange="-28 28"/>
+      </default>
+
+      <default class="size1">
+        <joint range="-3.1415 3.1415"/>
+        <general gainprm="500" biasprm="0 -500 -100" forcerange="-28 28"/>
+      </default>
+
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0"/>
+      </default>
+
+    </default>
+  </default>
+
+  <asset>
+    <material class="crx-10ial" name="black" rgba="0 0 0 1"/>
+    <material class="crx-10ial" name="white" rgba="1 1 1 1"/>
+
+    <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link_1" file="link_1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link_2" file="link_2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link_3" file="link_3.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link_4" file="link_4.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link_5" file="link_5.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link_6" file="link_6.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_link" pos="0 0 0">
+      <inertial pos="-0.0054014 -3.95078e-07 0.0408677" quat="0 0 0 1" mass="1e-1" diaginertia="0.034902 0.04052 0.059728"/>
+      <geom class="visual" mesh="base_link"/>
+      <geom type="mesh" material="black" mesh="base_link"/>
+      <body name="link_1" pos="0 0 0.085">
+        <inertial pos="1.83322e-07 -0.0176823 0.123907" quat="0.984366 0.176133 -4.88205e-06 4.66603e-06" mass="1e-1" diaginertia="0.28763 0.255835 0.169911"/>
+        <joint name="Revolute 1" pos="0 0 0" axis="0 0 1"/>
+        <geom class="visual" pos="0 0 -0.085" mesh="link_1"/>
+        <geom material="white" pos="0 0 -0.085" type="mesh" mesh="link_1"/>
+        <body name="link_2" pos="0 -0.119 0.159">
+          <inertial pos="1.13642e-07 -0.0831641 0.340179" quat="0.999903 -0.013912 0 0" mass="1e-1" diaginertia="7.52834 7.44337 0.292956"/>
+          <joint name="Revolute 2" pos="0 0 0" axis="0 -1 0"/>
+          <geom class="visual" pos="0 0.119 -0.244"  mesh="link_2"/>
+          <geom material="white" pos="0 0.119 -0.244" type="mesh" mesh="link_2"/>
+          <body name="link_3" pos="2.3e-05 0.044 0.710161">
+            <inertial pos="0.0352042 0.0685322 1.75694e-07" quat="-0.0428016 0.70581 0.0428016 0.70581" mass="1e-1" diaginertia="0.100913 0.0993525 0.0500085"/>
+            <joint name="Revolute 3" pos="0 0 0" axis="0 1 0"/>
+            <geom class="visual" pos="-2.3e-05 0.075 -0.954161" mesh="link_3"/>
+            <geom material="white" pos="-2.3e-05 0.075 -0.954161" type="mesh" mesh="link_3"/>
+            <body name="link_4" pos="0.153 0.075 0">
+              <inertial pos="0.228345 -0.0016928 1.62433e-07" quat="0.00604209 0.707081 -0.00604209 0.707081" mass="1e-1" diaginertia="0.466364 0.464395 0.0352257"/>
+              <joint name="Revolute 4" pos="0 0 0" axis="1 0 0"/>
+              <geom class="visual" pos="-0.153023 0 -0.954161" mesh="link_4"/>
+              <geom material="white" pos="-0.153023 0 -0.954161" type="mesh" mesh="link_4"/>
+              <body name="link_5" pos="0.386 -0.064 0">
+                <inertial pos="0.0202185 -0.0730377 4.06449e-07" quat="0.181175 0.683502 -0.181175 0.683502" mass="1e-1" diaginertia="0.031492 0.0268089 0.0197951"/>
+                <joint name="Revolute 5" pos="0 0 0" axis="0 -1 0"/>
+                <geom class="visual" pos="-0.539023 0.064 -0.954161" mesh="link_5"/>
+                <geom material="white" pos="-0.539023 0.064 -0.954161" type="mesh" mesh="link_5"/>
+                <body name="link_6" pos="0.0995 -0.085 0">
+                  <inertial pos="0.0275666 0.000474934 4.59869e-06" quat="0.707099 0.707099 -0.00339504 -0.00339504" mass="1e-1" diaginertia="0.00305408 0.002302 0.00222092"/>
+                  <joint name="Revolute 6" pos="0 0 0" axis="1 0 0"/>
+                  <geom class="visual" pos="-0.638523 0.149 -0.954161" mesh="link_6"/>
+                  <geom material="black" pos="-0.638523 0.149 -0.954161" type="mesh" mesh="link_6"/>
+
+                  <body name="tool0_link" pos="0.05 0 0" quat="0.7071068 0 0.7071068 0">
+                    <site name="attachment_site" pos="0.05 0 0" quat="0 0 0 1"/>
+                    <site name="eef_site" pos="0.05 0 0" quat="0 0 0 1"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general class="size4" name="link_1" joint="Revolute 1"/>
+    <general class="size4" name="link_2" joint="Revolute 2"/>
+    <general class="size3" name="link_3" joint="Revolute 3"/>
+    <general class="size2" name="link_4" joint="Revolute 4"/>
+    <general class="size1" name="link_5" joint="Revolute 5"/>
+    <general class="size2" name="link_6" joint="Revolute 6"/>
+  </actuator>
+
+  <!-- <keyframe>
+    <key name="home" qpos="0 0 0 0 0 0 " ctrl="0 0 0 0 0 0"/>
+  </keyframe> -->
+
+</mujoco>
