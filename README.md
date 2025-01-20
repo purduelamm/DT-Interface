@@ -5,7 +5,7 @@
 # DT-Interface
 CESMII Project: Interface for bi-directional communication between FANUC and desktop PC. This project aims for building an intuitive interfance for users with limited experience of customized robot programming language (e.g., KAREL) to quickly plan, analyze, and verify robotic automation such as machine tending and palletization. 
 
-**This repository only contains MuJoCo simulation environment of the SM Framework. To fully build the framework, users require to download [IK-MPC](https://github.com/purduelamm/IK-MPC) AND [SM_Framework](https://github.com/purduelamm/SM_Framework).**
+**This repository only contains MuJoCo simulation environment of the SM Framework, which is developed based on [Manipulator-Mujoco](https://github.com/ian-chuang/Manipulator-Mujoco). To fully build the framework, users require to download [IK-MPC](https://github.com/purduelamm/IK-MPC) AND [SM_Framework](https://github.com/purduelamm/SM_Framework).**
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
